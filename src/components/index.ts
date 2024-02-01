@@ -1,3 +1,3 @@
 export * from './navbar';
-export * from './CallToAction';
+export * from './callToAction';
 export * from './footer';

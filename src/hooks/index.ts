@@ -1,1 +1,1 @@
-export * from './usemediaQuery';
+export * from './useMediaQuery';

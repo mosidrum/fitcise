@@ -4,22 +4,23 @@ import Logo from '@assets/Logo.png';
 import NavbarLink from './NavbarLink';
 import { SelectedPage } from '@customTypes/types';
 import { useMediaQuery } from '@hooks/useMediaQuery';
-import { CallToAction } from '@components/CallToAction';
+import { CallToAction } from '@components/callToAction';
 
 type Props = {
+  topOfScreen: boolean;
   selectedPage: SelectedPage;
   setSelectedPage: (value: SelectedPage) => void;
 };
 
-const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
+const Navbar = ({ topOfScreen, selectedPage, setSelectedPage }: Props) => {
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
   const flexbetween = 'flex items-center justify-between';
   const checkIfMobileScreen = useMediaQuery('(min-width: 1060px)');
-  console.log(isMenuToggled);
-  
+  const changeNavBackground = topOfScreen ? '' : 'bg-primary-100 drop-shadow';
+
   return (
     <nav>
-      <div className={`${flexbetween} fixed top-0 z-30 w-full py-6`}>
+      <div className={`${changeNavBackground} ${flexbetween} fixed top-0 z-30 w-full py-6`}>
         <div className={`${flexbetween} mx-auto w-5/6`}>
           <div className={`${flexbetween} w-full gap-16`}>
             <img src={Logo} alt="logo" />
