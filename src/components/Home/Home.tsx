@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SelectedPage } from '@customTypes/types';
+import { SelectedPage, SelectedProps } from '@customTypes/types';
 import HomePageText from '@assets/HomePageText.png';
 import HomePageImage from '@assets/HomePageGraphic.png';
 import RedBulls from '@assets/SponsorRedBull.png';
@@ -10,11 +10,7 @@ import { CallToAction } from '..';
 import { motion } from 'framer-motion';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
-type Props = {
-  setSelectedPage: (value: SelectedPage) => void;
-};
-
-const Home = ({ setSelectedPage }: Props) => {
+const Home = ({ setSelectedPage }: SelectedProps) => {
   const isAboveMediumScreen = useMediaQuery('(min-width: 1060px)');
 
   return (
