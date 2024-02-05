@@ -1,8 +1,10 @@
 import { BenefitType, SelectedPage, SelectedProps } from '@customTypes/types';
 import { AcademicCapIcon, HomeModernIcon, UserGroupIcon } from '@heroicons/react/16/solid';
 import { motion } from 'framer-motion';
-import React from 'react';
+import BenefitGraphics from '@assets/BenefitsPageGraphic.png';
 import { Title } from '@components/title';
+import { Card } from '@components/card';
+import { CallToAction } from '@components/callToAction';
 
 const benefits: Array<BenefitType> = [
   {
@@ -34,7 +36,7 @@ export const Benefit = ({ setSelectedPage }: SelectedProps) => {
           </p>
         </div>
 
-        <div className="md:flex  items-center justify-between gap-8 mt-5 sm:flex-col ">
+        <div className="mt-5 items-center justify-between gap-8 md:flex ">
           {benefits.map((benefit: BenefitType, index: number) => (
             <Card
               key={index}
@@ -44,6 +46,42 @@ export const Benefit = ({ setSelectedPage }: SelectedProps) => {
               setSelectedPage={setSelectedPage}
             />
           ))}
+        </div>
+
+        <div className='mt-16 items-center justify-between gap-20 md:mt-28 md:flex'>
+          <img src={BenefitGraphics} className="mx-auto" alt="benefits-graphics" />
+          <div>
+            <div className="relative">
+              <div className="before:absolute before:-top-20 before:-left-20 before:z-[1] before:content-abstractwaves">
+                <div>
+                  <Title>
+                    MIllions of Happy members getting{' '}
+                    <span className="text-primary-500">FEAT AND FIT</span>
+                  </Title>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p className="my-5">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi soluta, commodi
+                voluptatibus ducimus et reprehenderit! Lorem ipsum dolor sit amet consectetur,
+                adipisicing elit. Assumenda hic libero quidem. Lorem ipsum dolor, sit amet
+                consectetur adipisicing elit. Id cupiditate earum hic esse quae perspiciatis saepe
+                nostrum cumque ab, atque repellat quaerat alias at animi ad consequatur distinctio
+                veritatis itaque!
+              </p>
+              <p className="mb-5">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab explicabo eaque in.
+                Lorem, ipsum dolor sit amet consectetur adipisicing. Lorem ipsum, dolor sit amet
+                consectetur adipisicing elit. Dolor, in!
+              </p>
+            </div>
+            <div className="relative mt-16">
+              <div className="before:absolute before:-bottom-20 before:right-40 before:z-[-1] before:content-sparkles">
+                <CallToAction setSelectedPage={setSelectedPage}>Join now</CallToAction>
+              </div>
+            </div>
+          </div>
         </div>
       </motion.div>
     </section>

@@ -15,9 +15,9 @@ export type SelectedProps = {
 
 
 export type BenefitType = {
-  icon: React.ReactNode;
-  title: String;
-  desc: String;
+  icon: JSX.Element;
+  title: string;
+  desc: string;
 };
 
 
